@@ -24,6 +24,7 @@ services:
       - .:/usr/src/app
     command: >
       sh -c "
+      pnpm install
       npx prisma generate &&
       npx prisma db push &&
       pnpm run start:dev
