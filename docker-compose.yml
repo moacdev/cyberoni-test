@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: foo
+      POSTGRES_PASSWORD: dATyWvnhJ4CqP2utVxbLBc
+      POSTGRES_DB: cyberoni-test
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    ports:
+      - "8888:8888"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://foo:dATyWvnhJ4CqP2utVxbLBc@db:5432/cyberoni-test
+    volumes:
+      - .:/usr/src/app
+    command: >
+      sh -c "
+      npx prisma generate &&
+      npx prisma db push &&
+      pnpm run start:dev
+      "
+
+volumes:
+  db-data:
