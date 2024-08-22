@@ -60,33 +60,33 @@ Follow these steps to set up the project locally:
 
 1. **Clone the repository:**
 
-   \`\`\`bash
+   ```bash
    git clone https://github.com/yourusername/cyberoni-test-backend.git
    cd cyberoni-test-backend
-   \`\`\`
+   ```
 
 2. **Install dependencies:**
 
    If you're using npm:
 
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
    If you're using pnpm:
 
-   \`\`\`bash
+   ```bash
    pnpm install
-   \`\`\`
+   ```
 
 3. **Set up the environment variables:**
 
    Create a `.env` file in the root directory and add your environment variables. Here’s an example:
 
-   \`\`\`env
+   ```env
    DATABASE_URL="postgresql://foo:dATyWvnhJ4CqP2utVxbLBc@db:5432/cyberoni-test"
    PORT=8888
-   \`\`\`
+   ```
 
 ### Running the Application
 
@@ -94,9 +94,9 @@ Follow these steps to set up the project locally:
 
 1. **Build and run the Docker containers:**
 
-   \`\`\`bash
+   ```bash
    docker-compose up --build
-   \`\`\`
+   ```
 
 2. **Access the application:**
 
@@ -109,11 +109,11 @@ Follow these steps to set up the project locally:
 
 2. **Run database migrations and start the application:**
 
-   \`\`\`bash
+   ```bash
    npx prisma generate
    npx prisma db push
    npm run start:dev
-   \`\`\`
+   ```
 
 3. **Access the application:**
 
@@ -135,17 +135,17 @@ This project uses PostgreSQL as its database, managed via Prisma ORM.
 
    After setting up the environment and the database, apply the Prisma migrations to create the necessary tables:
 
-   \`\`\`bash
+   ```bash
    npx prisma migrate dev --name init
-   \`\`\`
+   ```
 
 2. **Generating Prisma Client:**
 
    After any schema change, generate the updated Prisma client:
 
-   \`\`\`bash
+   ```bash
    npx prisma generate
-   \`\`\`
+   ```
 
 ## API Documentation
 
@@ -166,7 +166,7 @@ This documentation allows you to explore and test the API endpoints directly fro
 
 Here's an overview of the project structure:
 
-\`\`\`
+```
 cyberoni-test-backend/
 │
 ├── src/                     # Source files
@@ -184,7 +184,7 @@ cyberoni-test-backend/
 ├── Dockerfile               # Docker image configuration
 ├── package.json             # npm or pnpm scripts and dependencies
 └── README.md                # Project documentation
-\`\`\`
+```
 
 ### Running Tests
 
@@ -192,21 +192,21 @@ This project uses Jest for unit and integration testing.
 
 - **Run all tests:**
 
-  \`\`\`bash
+  ```bash
   npm run test
-  \`\`\`
+  ```
 
 - **Run tests with coverage:**
 
-  \`\`\`bash
+  ```bash
   npm run test:cov
-  \`\`\`
+  ```
 
 - **Run e2e tests:**
 
-  \`\`\`bash
+  ```bash
   npm run test:e2e
-  \`\`\`
+  ```
 
 ## Docker Setup
 
@@ -216,9 +216,9 @@ This project is fully containerized using Docker. The `docker-compose.yml` file 
 
 To build and run the containers:
 
-\`\`\`bash
+```bash
 docker-compose up --build
-\`\`\`
+```
 
 This will start both the API server and the PostgreSQL database.
 
