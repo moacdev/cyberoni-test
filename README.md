@@ -64,6 +64,25 @@ Follow these steps to set up the project locally:
    git clone https://github.com/yourusername/cyberoni-test-backend.git
    cd cyberoni-test-backend
    ```
+### Running the Application
+
+#### With Docker
+
+1. **Build and run the Docker containers:**
+
+   ```bash
+   docker-compose up --build
+   ```
+
+2. **Access the application:**
+
+   - The API will be available at `http://localhost:8888`.
+   - The Swagger API documentation will be available at `http://localhost:8888/api-docs`.
+
+#### Without Docker
+
+1. **Ensure PostgreSQL is running and accessible.**
+
 
 2. **Install dependencies:**
 
@@ -84,30 +103,12 @@ Follow these steps to set up the project locally:
    Create a `.env` file in the root directory and add your environment variables. Here’s an example:
 
    ```env
-   DATABASE_URL="postgresql://foo:dATyWvnhJ4CqP2utVxbLBc@db:5432/cyberoni-test"
+   DATABASE_URL="postgresql://foo:thepassword@db:5432/cyberoni-test"
    PORT=8888
    ```
 
-### Running the Application
 
-#### With Docker
-
-1. **Build and run the Docker containers:**
-
-   ```bash
-   docker-compose up --build
-   ```
-
-2. **Access the application:**
-
-   - The API will be available at `http://localhost:8888`.
-   - The Swagger API documentation will be available at `http://localhost:8888/api-docs`.
-
-#### Without Docker
-
-1. **Ensure PostgreSQL is running and accessible.**
-
-2. **Run database migrations and start the application:**
+4. **Run database migrations and start the application:**
 
    ```bash
    npx prisma generate
@@ -115,7 +116,7 @@ Follow these steps to set up the project locally:
    npm run start:dev
    ```
 
-3. **Access the application:**
+4. **Access the application:**
 
    - The API will be available at `http://localhost:8888`.
    - The Swagger API documentation will be available at `http://localhost:8888/api-docs`.
@@ -152,11 +153,6 @@ This project uses PostgreSQL as its database, managed via Prisma ORM.
 The API is documented using Swagger. After running the application, you can access the interactive API documentation at:
 
 http://localhost:8888/api-docs
-
-markdown
-Always show details
-
-Copy code
 
 This documentation allows you to explore and test the API endpoints directly from your browser.
 
